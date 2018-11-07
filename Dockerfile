@@ -23,6 +23,4 @@ RUN apk add --no-cache --virtual .build-deps \
 ENV TF_IN_AUTOMATION=true \
 	TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
-COPY terraform /terraform
-
 CMD ["/bin/terraform", "help"]

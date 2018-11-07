@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: "Build image"
+          command: docker build -t pagerinc/terraform:$CIRCLE_BRANCH .
+      - run: |
+          docker create -v /tmp/test --name test alpine:3.8 /bin/true
+          docker cp test/tests.bats test:/tmp/test
+          docker cp test/run.sh test:/tmp/test
+          docker run -t --volumes-from test pagerinc/terraform:$CIRCLE_BRANCH '/tmp/test/run.sh'
