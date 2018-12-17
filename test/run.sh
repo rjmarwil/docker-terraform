@@ -1,9 +1,9 @@
-#!/bin/ash
+#!/bin/bash
 
 set -o errexit
 set -o nounset
 
-apk --no-cache add bats
+apt-get update && apt-get install --no-install-recommends -y bats
 
 echo "Unit Tests..."
 
