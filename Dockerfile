@@ -1,4 +1,4 @@
-FROM python:3.7-slim@sha256:0ab2cd566b1870c27c97797a0565532e12261aed41fd75dcc25bff4f6efbe478
+FROM python:3.7-slim@sha256:4ecb9e34cd107f4c5b547416774421653cc12eb50065f45162bf0ee14e2db647
 
 ENV AWSCLI_VERSION='1.16.76'
 RUN pip install -q --no-cache-dir "awscli==${AWSCLI_VERSION}"
