@@ -19,3 +19,7 @@
 @test "It should install git in PATH" {
   command -v git
 }
+
+@test "It should include Sentry plugin in terraform" {
+  ls -l $HOME/.terraform.d/plugins/linux_amd64 | grep terraform-provider-sentry
+}
