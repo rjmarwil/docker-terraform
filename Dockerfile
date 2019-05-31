@@ -6,8 +6,7 @@ RUN pip install -q --no-cache-dir "awscli==${AWSCLI_VERSION}"
 ENV TERRAFORM_VERSION='0.12.0' \
 	TERRAFORM_SHA256SUM=42ffd2db97853d5249621d071f4babeed8f5fdba40e3685e6c1013b9b7b25830 \
 	TF_IN_AUTOMATION=true \
-	TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache" \
-	SENTRY_TPP_VERSION='0.4.0'
+	TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
 		curl \
@@ -19,10 +18,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 	&& sha256sum -c --status terraform_${TERRAFORM_VERSION}_SHA256SUMS \
 	&& unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /bin \
 	&& rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
-	&& curl -sSL https://github.com/jianyuan/terraform-provider-sentry/releases/download/v${SENTRY_TPP_VERSION}/terraform-provider-sentry_${SENTRY_TPP_VERSION}_linux_amd64.tar.gz > terraform-provider-sentry_${SENTRY_TPP_VERSION}_linux_amd64.tar.gz \
-	&& mkdir -p $HOME/.terraform.d/plugins/linux_amd64 \
-	&& tar -zxf terraform-provider-sentry_${SENTRY_TPP_VERSION}_linux_amd64.tar.gz -C $HOME/.terraform.d/plugins/linux_amd64 \
-	&& rm -f terraform-provider-sentry_${SENTRY_TPP_VERSION}_linux_amd64.tar.gz \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
 	&& apt-get autoremove --purge -y \
 		curl \
