@@ -20,8 +20,9 @@ jobs:
         name: Publish Docker Image to Docker Hub
         command: |
           echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-          docker tag pagerinc/terraform:${CIRCLE_SHA1:0:8} pagerinc/terraform:${CIRCLE_TAG}
+          docker build -t pagerinc/terraform:${CIRCLE_TAG} -t pagerinc/terraform:latest .
           docker push pagerinc/terraform:${CIRCLE_TAG}
+          docker push pagerinc/terraform:latest
 
 workflows:
   version: 2
