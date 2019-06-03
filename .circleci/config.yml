@@ -16,6 +16,7 @@ jobs:
   publish:
     machine: true
     steps:
+    - checkout
     - run:
         name: Publish Docker Image to Docker Hub
         command: |
