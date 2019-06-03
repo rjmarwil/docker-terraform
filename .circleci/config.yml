@@ -3,12 +3,39 @@ jobs:
   build:
     machine: true
     steps:
-      - checkout
-      - run:
-          name: "Build image"
-          command: docker build -t pagerinc/terraform:$CIRCLE_SHA1 .
-      - run: |
-          docker create -v /tmp/test --name test alpine:3.8 /bin/true
-          docker cp test/tests.bats test:/tmp/test
-          docker cp test/run.sh test:/tmp/test
-          docker run -t --volumes-from test pagerinc/terraform:$CIRCLE_SHA1 '/tmp/test/run.sh'
+    - checkout
+    - run:
+        name: "Build image"
+        command: docker build -t pagerinc/terraform:${CIRCLE_SHA1:0:8} .
+    - run: |
+        docker create -v /tmp/test --name test alpine:3.8 /bin/true
+        docker cp test/tests.bats test:/tmp/test
+        docker cp test/run.sh test:/tmp/test
+        docker run -t --volumes-from test pagerinc/terraform:${CIRCLE_SHA1:0:8} '/tmp/test/run.sh'
+
+  publish:
+    machine: true
+    steps:
+    - run:
+        name: Publish Docker Image to Docker Hub
+        command: |
+          echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+          docker tag pagerinc/terraform:${CIRCLE_SHA1:0:8} pagerinc/terraform:${CIRCLE_TAG}
+          docker push pagerinc/terraform:${CIRCLE_TAG}
+
+workflows:
+  version: 2
+  build-n-publish:
+    jobs:
+    - build:
+        filters:
+          tags:
+            only: /.*/
+    - publish:
+        requires:
+        - build
+        filters:
+          tags:
+            only: /.*/
+          branches:
+            ignore: /.*/
