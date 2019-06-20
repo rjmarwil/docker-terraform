@@ -4,8 +4,8 @@
   command -v terraform
 }
 
-@test "It should use terraform v0.12.0" {
-  terraform --version | grep 0.12.0
+@test "It should use terraform v0.11.14" {
+  terraform --version | grep 0.11.14
 }
 
 @test "It should install awscli in PATH" {
