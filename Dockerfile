@@ -1,7 +1,10 @@
 FROM python:3.7-slim@sha256:baf4188f0b50c6383fedd55cdb79f511bfabee23068dcf26f209426f4bf540ab
 
-ENV AWSCLI_VERSION='1.16.76'
-RUN pip install -q --no-cache-dir "awscli==${AWSCLI_VERSION}"
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+
+RUN pip install -q --no-cache-dir -r requirements.txt
 
 ENV TERRAFORM_VERSION='0.12.0' \
 	TERRAFORM_SHA256SUM=42ffd2db97853d5249621d071f4babeed8f5fdba40e3685e6c1013b9b7b25830 \

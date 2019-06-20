@@ -12,8 +12,8 @@
   command -v aws
 }
 
-@test "It should use aws 1.16.76" {
-  aws --version | grep 1.16.76
+@test "It should use aws 1.16.183" {
+  aws --version | grep 1.16.183
 }
 
 @test "It should install git in PATH" {
