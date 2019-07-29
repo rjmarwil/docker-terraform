@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.1] - 2019-07-29
+### Changed
+- Terraform 0.12.5 base 
+- awscli v1.16.207
+
 ## [1.0.0] - 2019-07-04
 ### Added
 - Terraform 0.12.3 base - this is a *breaking change* that's incompatible with
