@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.4] - 2019-08-09
+### Changed
+- Terraform 0.12.6
+- awscli v1.16.214
+
 ## [1.0.3] - 2019-08-01
 ### Changed
 - awscli v1.16.209
@@ -35,7 +41,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/pagerinc/docker-terraform/compare/1.0.3...HEAD
+[Unreleased]: https://github.com/pagerinc/docker-terraform/compare/1.0.4...HEAD
+[1.0.4]: https://github.com/pagerinc/docker-terraform/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/pagerinc/docker-terraform/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/pagerinc/docker-terraform/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/pagerinc/docker-terraform/compare/1.0.0...1.0.3
