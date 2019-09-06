@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.2.0] - 2019-09-06
+### Changed
+- Terraform 0.12.8 base.
+
 ## [1.1.0] - 2019-09-05
 ### Added
 - GNU make
@@ -52,7 +56,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/pagerinc/docker-terraform/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/pagerinc/docker-terraform/compare/1.2.0...HEAD
+[1.2.0]: https://github.com/pagerinc/docker-terraform/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/pagerinc/docker-terraform/compare/1.0.5...1.1.0
 [1.0.5]: https://github.com/pagerinc/docker-terraform/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/pagerinc/docker-terraform/compare/1.0.3...1.0.4
