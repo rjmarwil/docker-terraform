@@ -6,8 +6,8 @@ COPY requirements.txt ./
 
 RUN pip install -q --no-cache-dir -r requirements.txt
 
-ENV TERRAFORM_VERSION='0.12.6' \
-	TERRAFORM_SHA256SUM=6544eb55b3e916affeea0a46fe785329c36de1ba1bdb51ca5239d3567101876f \
+ENV TERRAFORM_VERSION='0.12.8' \
+	TERRAFORM_SHA256SUM=43806e68f7af396449dd4577c6e5cb63c6dc4a253ae233e1dddc46cf423d808b \
 	TF_IN_AUTOMATION=true \
 	TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
