@@ -14,6 +14,7 @@ ENV TERRAFORM_VERSION='0.12.6' \
 RUN apt-get update && apt-get install --no-install-recommends -y \
 		curl \
 		git \
+		make \
 		unzip \
 		zip \
 	&& curl -sSL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip \

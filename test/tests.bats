@@ -19,3 +19,7 @@
 @test "It should install git in PATH" {
   command -v git
 }
+
+@test "It should install make in PATH" {
+  command -v make
+}
