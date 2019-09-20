@@ -23,3 +23,11 @@
 @test "It should install make in PATH" {
   command -v make
 }
+
+@test "It should install shellcheck in PATH" {
+  command -v shellcheck
+}
+
+@test "It should use shellcheck 0.7.x" {
+  shellcheck --version | grep 0.7
+}
