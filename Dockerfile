@@ -27,4 +27,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 		curl \
 		unzip
 
+# Install shellcheck
+COPY --from=koalaman/shellcheck-alpine:v0.7.0@sha256:169a51b086af0ab181e32801c15deb78944bb433d4f2c0a21cc30d4e60547065 /bin/shellcheck /bin/shellcheck
+
 CMD ["/bin/terraform", "help"]
