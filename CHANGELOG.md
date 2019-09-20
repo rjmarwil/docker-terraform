@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.3.0] - 2019-09-20
+### Added
+- Shellcheck binary
+
+### Changed
+- awscli v1.16.242
+
 ## [1.2.0] - 2019-09-06
 ### Changed
 - Terraform 0.12.8 base.
