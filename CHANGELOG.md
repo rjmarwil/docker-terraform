@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.4.0] - 2019-10-29
+### Added
+- yamllint binary
+
+### Changed
+- awscli v1.16.268
+- python 3.8 base
+
 ## [1.3.0] - 2019-09-20
 ### Added
 - Shellcheck binary
